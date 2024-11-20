@@ -18,33 +18,28 @@
 import React, { useState } from 'react';
 
 export const FirstApp = () => {
-
   const [formState, setFormState] = useState({
-    
     nombre: '',
     apellido: '',
   });
 
   const handleInputChange = (e) => {
-    
     const { name, value } = e.target;
-    
     setFormState({
-    
       ...formState,
-      [name]: value, 
+      [name]: value,
     });
   };
 
   const getFullName = () => `${formState.nombre} ${formState.apellido}`;
 
   return (
-    <>
+    <div className="container">
       <h1>{getFullName()}</h1>
 
       <form>
         <div>
-          <label> 
+          <label>
             Nombre:
             <input type="text" name="nombre" value={formState.nombre} onChange={handleInputChange}/>
           </label>
@@ -59,6 +54,6 @@ export const FirstApp = () => {
       </form>
 
       <code>código</code>
-    </>
+    </div>
   );
 };
